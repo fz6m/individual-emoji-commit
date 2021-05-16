@@ -38,7 +38,7 @@ Each commit uses a random Emoji
 
 example:
 
-```json
+```js
 {
   "individualEmoji.random.enable": true,
   "individualEmoji.specified.enable": false, // using random mode needs to turn off specified mode
@@ -77,7 +77,7 @@ example:
 
 example:
 
-```json
+```js
 {
   "individualEmoji.specified.enable": true,
   "individualEmoji.specified.typeConfig": [
