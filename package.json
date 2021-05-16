@@ -1,0 +1,128 @@
+{
+  "name": "individual-emoji-commit",
+  "displayName": "Individual emoji commit",
+  "description": "Using emoji to highly customize commit message",
+  "version": "1.0.0",
+  "publisher": "fz6m",
+  "author": {
+    "name": "fz6m"
+  },
+  "keywords": [
+    "git",
+    "git commit",
+    "commit message",
+    "emoji",
+    "emoji commit",
+    "emoji commit message"
+  ],
+  "homepage": "https://github.com/fz6m/individual-emoji-commit#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fz6m/individual-emoji-commit"
+  },
+  "bugs": {
+    "url": "https://github.com/fz6m/individual-emoji-commit/issues"
+  },
+  "icon": "assets/logo.png",
+  "preview": false,
+  "galleryBanner": {
+    "color": "#FFC0CB",
+    "theme": "light"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:individual-emoji-commit.insert-emoji"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "individual-emoji-commit.insert-emoji",
+        "title": "Individual Emoji 🌈: insert emoji to commit message",
+        "icon": {
+          "light": "assets/icons/sakura.svg",
+          "dark": "assets/icons/sakura.svg"
+        }
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "when": "scmProvider == git",
+          "command": "individual-emoji-commit.insert-emoji",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "individual-emoji-commit.insert-emoji",
+        "key": "ctrl+shift+i",
+        "mac": "cmd+shift+i",
+        "when": "scmProvider == git"
+      }
+    ],
+    "configuration": {
+      "title": "Individual emoji commit",
+      "properties": {
+        "individualEmoji.random.enable": {
+          "type": "boolean",
+          "default": false,
+          "description": "enable random emoji"
+        },
+        "individualEmoji.random.list": {
+          "type": "array",
+          "default": [],
+          "description": "random emoji list"
+        },
+        "individualEmoji.specified.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "enable specified insert emoji by commit message type"
+        },
+        "individualEmoji.specified.typeConfig": {
+          "type": "array",
+          "default": [],
+          "description": "specified insert emoji config"
+        },
+        "individualEmoji.pos": {
+          "type": "string",
+          "enum": [
+            "start",
+            "end"
+          ],
+          "default": "start",
+          "description": "insert emoji position"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "dev": "yarn watch",
+    "watch": "tsc -watch -p ./",
+    "compile": "tsc -p ./",
+    "build": "yarn compile",
+    "build:pkg": "yarn compile && vsce package",
+    "lint": "eslint src --ext ts",
+    "vscode:prepublish": "yarn compile"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.56.0",
+    "@types/glob": "^7.1.3",
+    "@types/mocha": "^8.0.4",
+    "@types/node": "^12.11.7",
+    "eslint": "^7.19.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "glob": "^7.1.6",
+    "mocha": "^8.2.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0"
+  },
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.56.0"
+  }
+}
