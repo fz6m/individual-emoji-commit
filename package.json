@@ -25,10 +25,6 @@
   },
   "icon": "assets/logo.png",
   "preview": false,
-  "galleryBanner": {
-    "color": "#FFC0CB",
-    "theme": "light"
-  },
   "categories": [
     "Other"
   ],
