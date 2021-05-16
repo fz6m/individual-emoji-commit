@@ -1,34 +1,34 @@
 # Individual emoji commit
 
-Using emoji to highly customize commit message.
+使用 emoji 高度自定义你的 commit message
 
-Language: English | [简体中文](./README-CN.md)
+Language: [English](./README.md) | 简体中文
 
-## Feature
+## 特性
 
-- Automatically identify commit type and use the best Emoji
+- 自动识别当前提交的类型并附加最佳 emoji
 
-- Support defining your favorite Emoji for different commit types
+- 支持定义你喜欢的 emoji 对于任何提交类型
 
-## Preview
+## 示例
 
 <img src='https://cdn.jsdelivr.net/gh/fz6m/Private-picgo@moe-2021/img/20210517024321.gif' />
 
-## Usage
+## 使用
 
-Three ways to trigger the addition of Emoji.
+有三种方式可以触发该插件附加 emoji ：
 
- - Click icon: click git panel navigation icon (🌸)
+ - 点击图标: 点击 git 面板上侧导航栏的图标 (🌸)
 
- - Keyboard: `ctrl/cmd + shift + i`
+ - 快捷键: `ctrl/cmd + shift + i`
 
- - Command: Individual Emoji 🌈: insert emoji to commit message
+ - 命令: Individual Emoji 🌈: insert emoji to commit message
 
-## Config
+## 配置
 
 ### random mode
 
-Each commit uses a random Emoji
+随机使用你提供的 emoji
 
 #### `individualEmoji.random.enable`
 
@@ -43,7 +43,7 @@ example:
 ```js
 {
   "individualEmoji.random.enable": true,
-  "individualEmoji.specified.enable": false, // using random mode needs to turn off specified mode
+  "individualEmoji.specified.enable": false, // 使用 random 模式需要关闭 specified 模式
   "individualEmoji.random.list": ["🧀", "🍫", "🍪"]
 }
 ```
@@ -56,7 +56,7 @@ example:
 
 #### `individualEmoji.specified.typeConfig`
 
-- default: Best practices of [gitmoji](https://gitmoji.dev/)
+- default: 默认使用 [gitmoji](https://gitmoji.dev/) 的 emoji 最佳实践
 
 ```js
 // https://gitmoji.dev/
@@ -83,11 +83,11 @@ example:
 {
   "individualEmoji.specified.enable": true,
   "individualEmoji.specified.typeConfig": [
-    // override default this type config ['feat', ['✨']]
+    // 覆盖默认提供的配置 ['feat', ['✨']]
     ["feat", ["🌸", "🌈"]],
-    // random from individualemoji.random.list
+    // 若没有提供 emoji，默认从 individualEmoji.random.list 内随机获取
     ["fix"],
-    // not use random emoji
+    // 固定该提交类型的 emoji
     ["chore", "🍎"]
   ]
 }
