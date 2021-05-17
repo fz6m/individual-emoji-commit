@@ -2,7 +2,7 @@
   "name": "individual-emoji-commit",
   "displayName": "Individual emoji commit",
   "description": "Using emoji to highly customize commit message",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "publisher": "fz6m",
   "author": {
     "name": "fz6m"
