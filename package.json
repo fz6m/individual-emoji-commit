@@ -56,8 +56,7 @@
       {
         "command": "individual-emoji-commit.insert-emoji",
         "key": "ctrl+shift+i",
-        "mac": "cmd+shift+i",
-        "when": "scmProvider == git"
+        "mac": "cmd+shift+i"
       }
     ],
     "configuration": {
