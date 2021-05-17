@@ -39,7 +39,13 @@ export const rewrite = ({ mode, pos, source, config, git, context }: RewritePara
     const setValue = (newValue: string) => {
 
       const confirm = () => {
+        // set value
         repository.inputBox.value = newValue;
+        // refocus
+        setTimeout(() => {
+          ;(source.inputBox as any)?.focus();
+        }, 0);
+        // update global state
         context.globalState.update(STORE_PRE_VALUE, newValue);
       };
 
@@ -109,7 +115,7 @@ export const rewrite = ({ mode, pos, source, config, git, context }: RewritePara
     }
   };
 
-  // multi repo
+  // has focus single repo
   if (source) {
     const currentRepo = git.repositories.find((repository) => {
       return repository.rootUri.path === source.rootUri?.path;
@@ -117,7 +123,7 @@ export const rewrite = ({ mode, pos, source, config, git, context }: RewritePara
     currentRepo && patchInputText(currentRepo);
     return;
   }
-  // single repo
+  // all repo
   git.repositories.forEach((repo) => {
     patchInputText(repo);
   });
